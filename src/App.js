@@ -199,7 +199,7 @@ const HeroSection = ({ onGetStartedClick, onDemoClick }) => {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <section ref={ref} id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+    <section ref={ref} id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 px-4 sm:px-0 pt-20 sm:pt-24">
       {/* Background Elements */}
       <motion.div
         style={{ y, opacity }}
@@ -211,13 +211,13 @@ const HeroSection = ({ onGetStartedClick, onDemoClick }) => {
       </motion.div>
 
       <div className="container-custom relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
           {/* Hero Content */}
           <motion.div
             variants={staggerContainer}
             initial="initial"
             animate="animate"
-            className="text-center lg:text-left"
+            className="text-center lg:text-left order-2 lg:order-1"
           >
             <motion.div
               variants={fadeInUp}
@@ -231,12 +231,12 @@ const HeroSection = ({ onGetStartedClick, onDemoClick }) => {
 
             <motion.h1
               variants={fadeInUp}
-              className="heading-xl mb-6"
+              className="heading-xl mb-6 pt-4 sm:pt-6"
             >
               <span className="ethiopic-display block text-primary-900 mb-8">
                 በኢትዮጵያ ምርጥ የቢዝነስ መረጃ
               </span>
-              <span className="gradient-text mt-4 block">
+              <span className="gradient-text mt-6 block">
                 Empowering Connections with Ethiopian Business Intelligence
               </span>
             </motion.h1>
@@ -252,32 +252,32 @@ const HeroSection = ({ onGetStartedClick, onDemoClick }) => {
 
             <motion.div
               variants={fadeInUp}
-              className="flex flex-col sm:flex-row gap-4 mb-8"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 w-full sm:w-auto"
             >
               <motion.button
-                className="btn-primary text-lg px-8 py-4"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto min-h-12 sm:min-h-14"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={onGetStartedClick}
               >
                 Get Started
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </motion.button>
               
               <motion.button
-                className="btn-secondary text-lg px-8 py-4"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto min-h-12 sm:min-h-14"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={onDemoClick}
               >
                 Request Demo
-                <ExternalLink className="ml-2 w-5 h-5" />
+                <ExternalLink className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </motion.button>
             </motion.div>
 
             <motion.div
               variants={fadeInUp}
-              className="flex items-center justify-center lg:justify-start space-x-8 text-sm text-gray-500"
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-2 sm:space-y-0 sm:space-x-8 text-sm text-gray-500"
             >
               <div className="flex items-center">
                 <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
@@ -295,12 +295,12 @@ const HeroSection = ({ onGetStartedClick, onDemoClick }) => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+            className="relative order-1 lg:order-2 mb-8 lg:mb-0"
           >
-            <div className="relative w-full max-w-lg mx-auto">
+            <div className="relative w-full max-w-sm sm:max-w-lg mx-auto">
               {/* Main Card */}
               <motion.div
-                className="bg-white rounded-3xl shadow-soft-xl p-8"
+                className="bg-white rounded-3xl shadow-soft-xl p-4 sm:p-6 lg:p-8"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               >
@@ -545,7 +545,7 @@ const ServicesSection = () => {
           variants={staggerContainer}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          className="grid md:grid-cols-3 gap-8"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -553,8 +553,9 @@ const ServicesSection = () => {
               <motion.div
                 key={service.title}
                 variants={fadeInUp}
-                className="card-interactive group"
-                whileHover={{ y: -8 }}
+                className="card-interactive group sm:card-mobile"
+                whileHover={{ y: -4 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <div className="text-center mb-6">
                   <div className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -635,7 +636,7 @@ const ComparisonSection = () => {
           variants={staggerContainer}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto"
         >
           {comparisons.map((item, index) => {
             const Icon = item.icon;
@@ -742,22 +743,22 @@ const CTASection = ({ onGetStartedClick, onDemoClick }) => {
 
           <motion.div
             variants={fadeInUp}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full sm:w-auto"
           >
             <motion.button
-              className="bg-white text-primary-600 hover:bg-gray-100 px-8 py-4 rounded-2xl font-semibold text-lg shadow-soft-lg transition-all duration-200 hover:shadow-soft-xl hover:-translate-y-1"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="bg-white text-primary-600 hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg shadow-soft-lg transition-all duration-200 hover:shadow-soft-xl hover:-translate-y-1 w-full sm:w-auto min-h-12 sm:min-h-14"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               onClick={onGetStartedClick}
             >
               Get Started Now
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
             </motion.button>
             
             <motion.button
-              className="border-2 border-white text-white hover:bg-white hover:text-primary-600 px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-200"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="border-2 border-white text-white hover:bg-white hover:text-primary-600 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg transition-all duration-200 w-full sm:w-auto min-h-12 sm:min-h-14"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               onClick={onDemoClick}
             >
               Schedule Demo

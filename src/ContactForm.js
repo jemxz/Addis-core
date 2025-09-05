@@ -65,7 +65,7 @@ const ContactForm = ({ isOpen, onClose, title = "Get Started with Ethiopian Busi
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
-          className="relative w-full max-w-md bg-white rounded-3xl shadow-soft-xl p-6 max-h-[90vh] overflow-y-auto"
+          className="relative w-full max-w-md bg-white rounded-3xl shadow-soft-xl p-4 sm:p-6 max-h-[90vh] overflow-y-auto mx-4"
         >
           {/* Close Button */}
           <button
@@ -79,12 +79,12 @@ const ContactForm = ({ isOpen, onClose, title = "Get Started with Ethiopian Busi
           {!isSubmitted ? (
             <>
               {/* Header */}
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Mail className="w-8 h-8 text-white" />
+              <div className="text-center mb-4 sm:mb-6">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <h2 className="heading-sm mb-2">{title}</h2>
-                <p className="text-gray-600">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">{title}</h2>
+                <p className="text-sm sm:text-base text-gray-600">
                   Fill out the form below and we'll reach out to you within 24 hours.
                 </p>
               </div>
@@ -104,7 +104,8 @@ const ContactForm = ({ isOpen, onClose, title = "Get Started with Ethiopian Busi
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all text-base min-h-12"
+                      style={{ fontSize: '16px' }} // Prevents zoom on iOS
                       placeholder="Enter your full name"
                     />
                   </div>
